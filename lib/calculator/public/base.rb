@@ -1,12 +1,11 @@
 module Calculator
   module Public
     class Base
-      attr_reader :numbers, :operation
+      attr_reader :numbers
       attr_accessor :errors
 
-      def initialize(numbers, operation)
+      def initialize(numbers)
         @numbers = ::Calculator::Parser.new(numbers).parse
-        @operation = operation
       end
 
       def calculate
