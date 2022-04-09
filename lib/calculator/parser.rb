@@ -3,7 +3,7 @@ module Calculator
     attr_reader :numbers
 
     def initialize(numbers)
-      @numbers = numbers
+      @numbers = numbers.to_s
     end
 
     def parse

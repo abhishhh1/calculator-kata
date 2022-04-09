@@ -4,20 +4,20 @@ module Calculator
       attr_reader :numbers
       attr_accessor :errors
 
-      def initialize(numbers)
-        @numbers = ::Calculator::Parser.new(numbers).parse
+      def initialize(number)
+        @numbers = ::Calculator::Parser.new(number).parse
       end
 
       def calculate
         @errors = ::Calculator::Validator.new(numbers).validate
-        return unless errors.present?
+        return if errors.present?
 
-        process(numbers)
+        process
       end
 
       private
 
-      def process(numbers)
+      def process
         raise NotImplementedError
       end
     end

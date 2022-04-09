@@ -1,7 +1,7 @@
 module Calculator
   module Public
     class Add < Base
-      def process(numbers)
+      def process
         numbers.sum
       end
     end

@@ -11,7 +11,7 @@ module Calculator
       # validate negative numbers
       errors << 'Negative Numbers' unless numbers.all?(&:positive?)
       # validate invalid numbers
-      errors << 'Invalid Numbers' unless numbers.reject(&:empty?) == numbers
+      errors << 'Invalid Numbers' unless numbers.reject(&:nil?) == numbers
       errors
     end
   end
